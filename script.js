@@ -3,4 +3,6 @@ window.onload = function() {
     const ctx = canvas.getContext('2d');
     const width = canvas.width;
     const height = canvas.height;
+    const G = 0.1;
+    
 }
