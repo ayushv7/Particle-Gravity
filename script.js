@@ -25,7 +25,8 @@ window.onload = function() {
         constructor(){
             this.x = touch.x;
             this.y = touch.y;
-            this.radius = Math.random()*15 + 1;
+            // this.radius = Math.random()*15 + 1;
+            this.radius = 15;
             this.velocityX = (Math.random()-0.5)*3.5;
             this.velocityY = (Math.random()-0.5)*3.5;
             this.color = '#fff';
@@ -34,6 +35,12 @@ window.onload = function() {
         update(){
             this.x += this.velocityX;
             this.y += this.velocityY + 2.5;
+            if(this.x + this.radius <= 0|| this.x + this.radius >= canvas.width){
+                this.velocityX = -this.velocityX;
+            }
+            if(this.y + this.radius <= 0 || this.y + this.radius >= canvas.innerWeight){
+                this.velocityY = -this.velocityY;
+            }
 
         }
 
@@ -49,6 +56,7 @@ window.onload = function() {
         for(let i = 0; i < particlesArray.length; i++){
             particlesArray[i].update();
             particlesArray[i].draw();
+
 
         }
     }
