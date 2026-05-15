@@ -31,7 +31,7 @@ window.onload = function() {
             // this.velocityY = (Math.random()-0.5)*3.5;
             this.velocityY = 2;
             this.color = '#fff';
-            this.p = null;
+            this.p;
         }
 
         update(){
@@ -43,7 +43,7 @@ window.onload = function() {
             else
                 this.velocityY += 0.1;
             this.y += this.velocityY;
-            if(this.x + this.radius <= 0|| this.x + this.radius >= canvas.width){
+            if(this.x - this.radius <= 0|| this.x + this.radius >= canvas.width){
                 this.velocityX = -this.velocityX;
             }
             if(this.y + this.radius <= 0|| this.y + this.radius >= canvas.height){
