@@ -31,7 +31,7 @@ window.onload = function() {
             // this.velocityY = (Math.random()-0.5)*3.5;
             this.velocityY = 2;
             this.color = '#fff';
-            this.p = touch.y;
+            this.p = null;
         }
 
         update(){
@@ -62,6 +62,7 @@ window.onload = function() {
 
     function handleParticles(){
         for(let i = 0; i < particlesArray.length; i++){
+            particlesArray[i].p = particlesArray[i].y;
             particlesArray[i].update();
             particlesArray[i].draw();
 
