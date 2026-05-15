@@ -60,7 +60,7 @@ window.onload = function() {
         }
     }
 
-    function handleParticles(){
+    function controllParticles(){
         for(let i = 0; i < particlesArray.length; i++){
             particlesArray[i].p = particlesArray[i].y;
             particlesArray[i].update();
@@ -72,7 +72,7 @@ window.onload = function() {
     function animate(){
         ctx.fillStyle = 'rgba(0,0,0,0.31)'
         ctx.fillRect(0,0,canvas.width,canvas.height);
-        handleParticles();
+        controllParticles();
         requestAnimationFrame(animate);
     }
     animate();
