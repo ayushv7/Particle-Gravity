@@ -15,7 +15,7 @@ window.onload = function() {
     document.addEventListener('mousemove', function(event) {
         touch.x = event.x;
         touch.y = event.y;
-        for(let i = 0; i < 2.5; i++) {
+        for(let i = 0; i < 1; i++) {
             particlesArray.push(new Particle());
         }
 
@@ -28,15 +28,26 @@ window.onload = function() {
             // this.radius = Math.random()*15 + 1;
             this.radius = 15;
             this.velocityX = (Math.random()-0.5)*3.5;
-            this.velocityY = (Math.random()-0.5)*3.5;
+            // this.velocityY = (Math.random()-0.5)*3.5;
+            this.velocityY = 2;
             this.color = '#fff';
+            this.p = touch.y;
         }
 
         update(){
+            
             this.x += this.velocityX;
-            this.y += this.velocityY + 2.5;
+            if(this.velocityY >= this.p){
+                this.velocityY = this.p;
+            }
+            else
+                this.velocityY += 0.1;
+            this.y += this.velocityY;
             if(this.x + this.radius <= 0|| this.x + this.radius >= canvas.width){
                 this.velocityX = -this.velocityX;
+            }
+            if(this.y + this.radius <= 0|| this.y + this.radius >= canvas.height){
+                this.velocityY = -this.velocityY;
             }
             
         }
@@ -58,7 +69,7 @@ window.onload = function() {
         }
     }
     function animate(){
-        ctx.fillStyle = 'rgba(0,0,0,1)'
+        ctx.fillStyle = 'rgba(0,0,0,0.31)'
         ctx.fillRect(0,0,canvas.width,canvas.height);
         handleParticles();
         requestAnimationFrame(animate);
