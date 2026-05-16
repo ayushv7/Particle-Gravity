@@ -5,6 +5,7 @@ window.onload = function() {
     canvas.height = window.innerHeight;
     
     const particlesArray = [];
+    const color = [green, blue, red , pink ];
 
     const touch = {
         x: null,
