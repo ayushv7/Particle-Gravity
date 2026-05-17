@@ -5,7 +5,7 @@ window.onload = function() {
     canvas.height = window.innerHeight;
     
     const particlesArray = [];
-    const color = [green, blue, red , pink ];
+    const color = ['green', 'blue', 'red' , 'pink', 'yellow', 'white', 'lightgreen' ];
 
     const touch = {
         x: null,
@@ -31,7 +31,7 @@ window.onload = function() {
             this.velocityX = (Math.random()-0.5)*3.5;
             // this.velocityY = (Math.random()-0.5)*3.5;
             this.velocityY = 2;
-            this.color = '#fff';
+            this.color = color[Math.trunc(Math.random()*color.length)];
             this.p;
         }
 
