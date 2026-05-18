@@ -71,7 +71,7 @@ window.onload = function() {
         }
     }
     function animate(){
-        ctx.fillStyle = 'rgba(0,0,0,0.31)'
+        ctx.fillStyle = 'rgba(0,0,0,0.32)'
         ctx.fillRect(0,0,canvas.width,canvas.height);
         controllParticles();
         requestAnimationFrame(animate);
