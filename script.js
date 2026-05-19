@@ -66,7 +66,9 @@ window.onload = function() {
             particlesArray[i].p = particlesArray[i].y;
             particlesArray[i].update();
             particlesArray[i].draw();
-
+            for(let j = 0; j < particlesArray.length; j++){
+                
+            }
 
         }
     }
